@@ -3,10 +3,13 @@ Hero styles
 ========================================================================== */
 
 .hero-body {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     .title, .subtitle {
         font-family: 'Open Sans', sans-serif;
+    }
+    .subtitle {
+        margin-bottom: 3.5rem;
     }
     .title {
         &.is-bold {
@@ -17,6 +20,13 @@ Hero styles
         &.is-muted {
             color: $muted-grey;
         }
+    }
+    figure.image {
+        height: auto;
+        width: 100%;
+    }
+    .landing-caption p img {
+        height: 60px;
     }
 }
 

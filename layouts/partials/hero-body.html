@@ -1,29 +1,35 @@
-{{- $hero       := .Site.Params.hero }}
-{{- $title      := index $hero "title" }}
-{{- $subtitle   := index $hero "subtitle" }}
-{{- $buttonText := index $hero "buttontext" }}
-{{- $buttonLink := index $hero "buttonlink" }}
-{{- $image      := index $hero "image" }}
+{{- $hero := .Site.Params.hero }}
+{{- $title := index $hero "title" }}
+{{- $subtitle := index $hero "subtitle" }}
+{{- $button1 := index $hero "button1" }}
+{{- $button2 := index $hero "button2" }}
+{{- $buttonFooter := index $hero "buttonfooter" }}
+{{- $image := index $hero "image" }}
 <div class="hero-body">
   <div class="container">
     <div class="columns is-vcentered">
-      <div class="column is-5 is-offset-1 landing-caption">
+      <div class="column is-6 is-offset-1 landing-caption">
         <h1 class="title is-1 is-bold is-spaced">
           {{ $title }}
         </h1>
         {{ with $subtitle }}
         <h2 class="subtitle is-5 is-muted">
-          {{ . }}
+          {{ . | safeHTML }}
         </h2>
         {{ end }}
         <p>
-          <a class="button cta rounded primary-btn raised" href="{{ $buttonLink }}">
-            {{ $buttonText }}
+          <a href="{{ $button1.link }}">
+            <img src="{{ printf "/images/%s" $button1.image | relURL }}" alt="Description">
           </a>
+          <a href="{{ $button2.link }}">
+            <img src="{{ printf "/images/%s" $button2.image | relURL }}" alt="Description">
+          </a>
+          <br />
+          {{ $buttonFooter | safeHTML }}
         </p>
       </div>
-      <div class="column is-5 is-offset-1">
-        <figure class="image is-4by3">
+      <div class="column is-4 is-offset-1">
+        <figure class="image">
           <img src="{{ printf "/images/%s" $image | relURL }}" alt="Description">
         </figure>
       </div>

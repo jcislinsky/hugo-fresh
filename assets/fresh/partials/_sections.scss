@@ -25,11 +25,13 @@ Section Styles
             color: $muted-grey;
         }
     }
+    p.store-buttons img {
+        height: 60px;
+    }
 }
 
 //Titles
 .title-wrapper {
-    max-width: 500px;
     margin: 0 auto;
     .title, .subtitle {
         font-family: 'Open Sans', sans-serif;
@@ -39,6 +41,9 @@ Section Styles
         &.is-muted {
             color: $muted-grey;
         }
+    }
+    h2.title {
+        font-size: 2.5rem;
     }
 }
 
@@ -81,5 +86,12 @@ img.pushed-image {
             font-size: 1rem;
             font-weight: 400;
         }
+    }
+    .image {
+        padding: 50px;
+    }
+    img {
+        width: 100px;
+        height: 100px;
     }
 }

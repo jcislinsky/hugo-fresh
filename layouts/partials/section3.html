@@ -1,10 +1,10 @@
-{{- $section3   := .Site.Params.section3 }}
-{{- $title      := index $section3 "title" }}
-{{- $subtitle   := index $section3 "subtitle" }}
-{{- $image      := index $section3 "image" }}
-{{- $buttonText := index $section3 "buttontext" }}
-{{- $buttonLink := index $section3 "buttonlink" }}
-<section class="section section-feature-grey is-medium">
+{{- $section3 := .Site.Params.section3 }}
+{{- $title := index $section3 "title" }}
+{{- $subtitle := index $section3 "subtitle" }}
+{{- $image := index $section3 "image" }}
+{{- $button1 := index $section3 "button1" }}
+{{- $button2 := index $section3 "button2" }}
+<section class="section section-feature-grey is-medium" id="section3">
   <div class="container">
     <div class="columns">
       <div class="column is-10 is-offset-1">
@@ -15,13 +15,16 @@
     </div>
 
     <div class="title-wrapper has-text-centered">
-      <h2 class="title is-2">{{ $title }}</h2>
+      <h2 class="title is-7">{{ $title }}</h2>
       <h3 class="subtitle is-5 is-muted">{{ $subtitle }}</h3>
     </div>
 
-    <p class="has-text-centered mt-20">
-      <a class="button cta is-large rounded secondary-btn raised" href="{{ $buttonLink }}">
-        {{ $buttonText }}
+    <p class="has-text-centered mt-20 store-buttons">
+      <a href="{{ $button1.link }}">
+        <img src="{{ printf "/images/%s" $button1.image | relURL }}" alt="Description">
+      </a>
+      <a href="{{ $button2.link }}">
+        <img src="{{ printf "/images/%s" $button2.image | relURL }}" alt="Description">
       </a>
     </p>
   </div>
